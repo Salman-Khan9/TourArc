@@ -7,7 +7,6 @@ import axios from "axios"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -88,12 +87,11 @@ const Signup = () => {
         <FormField
         control={form.control}
         name="email"
-        type = "email"
         render={({ field }) => (
           <FormItem>
             <FormLabel>Email</FormLabel>
             <FormControl>
-              <Input placeholder="Email" {...field} />
+              <Input placeholder="Email" {...field}  type = "email"/>
             </FormControl>
             
               
@@ -103,13 +101,12 @@ const Signup = () => {
         )}
       /> <FormField
       control={form.control}
-      type="password"
       name="password"
       render={({ field }) => (
         <FormItem>
           <FormLabel>Password</FormLabel>
           <FormControl>
-            <Input placeholder="Password" {...field} />
+            <Input placeholder="Password" {...field} type="password"/>
           </FormControl>
           
             
@@ -118,14 +115,13 @@ const Signup = () => {
         </FormItem>
       )}
     /> <FormField
-    type = "password"
     control={form.control}
     name="confirmpassword"
     render={({ field }) => (
       <FormItem>
         <FormLabel>Confirm Password</FormLabel>
         <FormControl>
-          <Input placeholder="Confirm Password" {...field} />
+          <Input placeholder="Confirm Password" {...field} type = "password"/>
         </FormControl>
         
           
