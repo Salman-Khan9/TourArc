@@ -4,17 +4,17 @@ const User = require("../Models/Users");
 const route = express.Router();
 route.post("/signup", async (req, res) => {
   try {
-    const { name, email, password } = req.body;
-    if (!name || !email || !password) {
+    const { firstname, lastname ,email, password } = req.body;
+    if (!firstname || !email || !password) {
       res.status(400).json("please fill the required fields ");
     }
     const checkexistingemail = await User.findOne({ email });
     if (checkexistingemail) {
-      res.status(400).json("Email already registered");
+      res.json("Email already registered");
     }
     const hashedpass = await bcrypt.hash(password, 10);
 
-    const data = await User.create({ name, email, password: hashedpass });
+    const data = await User.create({ firstname,lastname, email, password: hashedpass });
     res.status(200).json(data);
   } catch (error) {
     res.status(400).json("Error occured");
