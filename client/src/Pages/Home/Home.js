@@ -1,9 +1,12 @@
+import Footer from '../../components/Footer/Footer'
+import Navbar from '../../components/Navbar/Navbar'
 import React from 'react'
 
 const Home = () => {
   return (
-    <div className='m-20 p-10 bg-black text-white w-28  '>
-     home
+    <div className='w-screen h-screen p-0 m-0 overflow-x-hidden  bg-black  '>
+      <Navbar/>
+     <Footer/>
     </div>
   )
 }
