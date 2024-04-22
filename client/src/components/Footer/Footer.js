@@ -27,9 +27,9 @@ const Footer = () => {
         {/* Go Further With The Tour Arc App section */}
         <div className=''>
           <p className='text-xl font-bold text-sky-700'>Go Further With The Tour Arc App</p>
-          <p className='mt-2'>Enjoy Savings On Chosen Hotels And Flights When You Book Through The TourArc Website.</p>
-          <p className='mt-2'>Additionally, Earn One Key Cash For Every Booking Made Through The App.</p>
-          <p className='mt-2 lg:pb-4'>Secured By XYZ GTP</p>
+          <p className='mt-1'>Enjoy Savings On Chosen Hotels And Flights When You Book Through The TourArc Website.</p>
+          <p className='mt-1'>Additionally, Earn One Key Cash For Every Booking Made Through The App.</p>
+          <p className='mt-1 lg:pb-4'>Secured By XYZ GTP</p>
         </div>
         <hr ></hr>
         {/* Footer sections */}
