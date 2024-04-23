@@ -31,9 +31,9 @@ const HotelSearch = () => {
         Discover Your Trip Worldwide !
       </p>
       <div className='w-screen  flex justify-center  mt-28'>
-      <div className='w-[800px]   flex   items-center border-1   '>
+      <div className='w-screen   flex   items-center border-1 justify-center   '>
       <Select >
-      <SelectTrigger className="w-[320px] rounded-s-md border-2 border-gray-300  text-black">
+      <SelectTrigger className="w-[450px] rounded-s-md border-2 border-gray-300  text-black">
         <div className='flex items-center space-x-1'>
             <div><FaCity/></div>
         <SelectValue placeholder="Select a City" />
@@ -96,7 +96,7 @@ const HotelSearch = () => {
       </SelectContent>
     </Select>
     <Select>
-  <SelectTrigger className="w-[220px] border-2 border-gray-300">
+  <SelectTrigger className="w-[340px] border-2 border-gray-300">
     <div className='flex items-center space-x-1'>
         <div><RiStarSLine/></div>
     <SelectValue placeholder="Hotel Rating" />
@@ -110,7 +110,7 @@ const HotelSearch = () => {
   </SelectContent>
 </Select>
 <Select>
-  <SelectTrigger className="w-[220px] border-2  border-gray-300 ">
+  <SelectTrigger className="w-[340px] border-2  border-gray-300 ">
     <div className='flex items-center space-x-1'>
         <div><IoMdPeople/></div>
     <SelectValue placeholder="Room Space" />
@@ -124,7 +124,7 @@ const HotelSearch = () => {
     <SelectItem value="2">2 Person Room </SelectItem>
   </SelectContent>
 </Select>
-<button className='bg-sky-700 rounded-e-md text-white p-[11px]  border-2 border-sky-800  px-8 font-medium'>Search</button>
+<button className='bg-sky-700 rounded-e-md text-white p-[11px] w-[200px] border-2 border-sky-800  px-8 font-medium'>Search</button>
       </div>
       </div>
       </div>

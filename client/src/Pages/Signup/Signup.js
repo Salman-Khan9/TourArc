@@ -37,8 +37,7 @@ const Signup = () => {
        if(values.password !== values.confirmpassword ){
         window.alert("Password doesnot match")
        }
-       const res = await axios.post("http://localhost:5000/signup",values)
-       console.log(res.data)
+        await axios.post("http://localhost:5000/signup",values)
        
       }
     
