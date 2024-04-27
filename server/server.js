@@ -4,6 +4,8 @@ const cors = require("cors")
 const route = require("./Routes/Users")
 const routes = require("./Routes/Hotel")
 const specialroute = require("./Routes/Specialoffers")
+const TDroutes = require("./Routes/Trendingdestinations")
+const Poffersroute = require("./Routes/Pastoffers")
 require("dotenv").config()
 const app = express()
 app.use(cors({
@@ -15,6 +17,8 @@ app.use(express.urlencoded({extended:false}))
 app.use(route)
 app.use(routes)
 app.use(specialroute)
+app.use(TDroutes)
+app.use(Poffersroute)
 
 const Port = process.env.Port || 5000
 mongoose.connect(process.env.MONGO_URI).then(()=>{

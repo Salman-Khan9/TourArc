@@ -17,8 +17,8 @@ const Footer = () => {
         }}
       >
         <div className='text-center text-white'>
-          <p className='font-bold text-4xl mt-8 md:mt-12 lg:mt-16'>Get Inspiration For Your Next Trip</p>
-          <p className='text-xl mt-4 md:mt-6'>Read About Wonderful Adventures We Love Most</p>
+          <p className='font-bold text-4xl mt-4 md:mt-10 '>Get Inspiration For Your Next Trip</p>
+          <p className='text-xl mt-2 md:mt-4'>Read About Wonderful Adventures We Love Most</p>
         </div>
       </div>
 

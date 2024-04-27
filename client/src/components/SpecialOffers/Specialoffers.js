@@ -10,7 +10,6 @@ const Specialoffers = () => {
         try {
             const imguri = await axios.get("http://localhost:5000/getoffer")
             setimagesuri(imguri.data)
-            console.log(imguri.data)
         } catch (error) {
             console.log(error)
         }

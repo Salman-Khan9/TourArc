@@ -13,7 +13,6 @@ const Home = () => {
       <HotelSearch/>
       <Specialoffers/>
       <ExploreStays/>
-
       <HighestReviewed/>
      <Footer/>
     </div>
