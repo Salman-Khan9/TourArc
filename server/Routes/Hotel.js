@@ -11,7 +11,7 @@ routes.post("/hotel",async(req,res)=>{
 })
 routes.get("/hotels",async(req,res)=>{
     try {
-        const data = await Hotel.find()
+        const data = await Hotel.find().sort({ roomspace: -1 })
         res.status(200).json(data)
     } catch (error) {
         res.status(400).json("error")

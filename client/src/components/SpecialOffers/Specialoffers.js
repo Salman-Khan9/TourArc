@@ -21,7 +21,7 @@ const Specialoffers = () => {
   return (
     <div className='w-screen h-[700px] flex justify-center  mt-10'>
         <div className='w-[1300px] h-[800px] '>
-            <p className='font-bold text-4xl'>Special Offers</p>
+            <p className='font-bold text-4xl'>Special Deals</p>
             <div className='flex flex-wrap items-center mt-10'>
                 {imagesuri.map((uri)=>(
                     <div  >

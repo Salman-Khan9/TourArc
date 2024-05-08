@@ -32,9 +32,8 @@ const Navbar = () => {
 
       <div className='flex justify-center space-x-3 mt-5'>
         <Link to="/trip"   className='py-1 px-10  bg-white rounded-3xl border-2 border-gray-200  hover:bg-sky-600 hover:py-2 hover:px-12 transition-all '>Trip</Link>
-        <Link to="/deal" className='py-1 px-10  bg-white rounded-3xl border-2 border-gray-200 hover:bg-sky-600 hover:py-2 hover:px-12 transition-all  '>%Deal</Link>
-        <Link to='/hotel' className='py-1 px-10  bg-white rounded-3xl border-2 border-gray-200  hover:bg-sky-600 hover:py-2 hover:px-12 transition-all '>Hotel</Link>
-        <Link to='/' className='py-1 px-10  bg-white rounded-3xl border-2 border-gray-200 hover:bg-sky-600 hover:py-2 hover:px-12 transition-all  '>Home</Link>
+        <Link to="/Deals" className='py-1 px-10  bg-white rounded-3xl border-2 border-gray-200 hover:bg-sky-600 hover:py-2 hover:px-12 transition-all  '>%Deals</Link>
+        <Link to='/' className='py-1 px-10  bg-white rounded-3xl border-2 border-gray-200  hover:bg-sky-600 hover:py-2 hover:px-12 transition-all '>Hotel</Link>
         <Link to="/flight" className='py-1 px-10  bg-white rounded-3xl border-2 border-gray-200 hover:bg-sky-600 hover:py-2 hover:px-12 transition-all  '>Flight</Link>
         <Link to='/apartment' className='py-1 px-10  bg-white rounded-3xl border-2 border-gray-200 hover:bg-sky-600 hover:py-2 hover:px-12 transition-all  '>Apartment</Link>
         <Link to='/camper' className='py-1 px-10  bg-white rounded-3xl border-2 border-gray-200  hover:bg-sky-600 hover:py-2 hover:px-12 transition-all '>Camper</Link>

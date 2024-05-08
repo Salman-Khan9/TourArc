@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import landingimage from "../../Assets/landing.jpg";
 import { FaCity } from "react-icons/fa";
 import { IoMdPeople } from "react-icons/io";
@@ -12,8 +12,39 @@ import {
     SelectTrigger,
     SelectValue,
   } from "../../components/ui/select"
+import { useDispatch, useSelector } from 'react-redux';
+import { set_Search } from '../../Redux/Slices/SearchSlice';
+import { selecthotels } from '../../Redux/Slices/HotelSlice';
+import { Link } from 'react-router-dom';
   
 const HotelSearch = () => {
+  const dispatch = useDispatch()
+  const hotels = useSelector(selecthotels)
+  const [city, setcity] = useState("")
+  const [rating, setrating] = useState("")
+  const [roomspace, setroomspace] = useState("")
+ 
+
+  const handleCityChange = (value)=>{
+    setcity(value)
+    }
+    const handleRatingChange = (value)=>{
+      setrating(value)
+      }
+      const handleRoomSpaceChange = (value)=>{
+        setroomspace(value)
+        }
+       
+     useEffect(() => {
+     
+        dispatch(set_Search({hotels,city,rating,roomspace}))
+      
+     }, [dispatch,hotels,rating,roomspace,city])
+        
+const onsubmit =()=>{
+  dispatch(set_Search({hotels,city,roomspace,rating}))
+}
+
   return (
     <div className=" h-[350px] w-screen">
       <div
@@ -32,70 +63,25 @@ const HotelSearch = () => {
       </p>
       <div className='w-screen  flex justify-center  mt-28'>
       <div className='w-screen   flex   items-center border-1 justify-center   '>
-      <Select >
-      <SelectTrigger className="w-[450px] rounded-s-md border-2 border-gray-300  text-black">
+      <Select onValueChange={handleCityChange} >
+      <SelectTrigger  className="w-[450px] rounded-s-md border-2 border-gray-300  text-black">
         <div className='flex items-center space-x-1'>
             <div><FaCity/></div>
-        <SelectValue placeholder="Select a City" />
+        <SelectValue placeholder="Select a City"  />
 
         </div>
       </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel>North America</SelectLabel>
-          <SelectItem value="est">Eastern </SelectItem>
-          <SelectItem value="cst">Central </SelectItem>
-          <SelectItem value="mst">Mountain </SelectItem>
-          <SelectItem value="pst">Pacific </SelectItem>
-          <SelectItem value="akst">Alaska </SelectItem>
-          <SelectItem value="hst">Hawaii</SelectItem>
-        </SelectGroup>
-        <SelectGroup>
-          <SelectLabel>Europe & Africa</SelectLabel>
-          <SelectItem value="gmt">Greenwich </SelectItem>
-          <SelectItem value="cet">Central  </SelectItem>
-          <SelectItem value="eet">Eastern  </SelectItem>
-          <SelectItem value="west">
-            Western European Summer Time (WEST)
-          </SelectItem>
-          <SelectItem value="cat">Central Africa Time (CAT)</SelectItem>
-          <SelectItem value="eat">East Africa Time (EAT)</SelectItem>
-        </SelectGroup>
-        <SelectGroup>
-          <SelectLabel>Asia</SelectLabel>
-          <SelectItem value="msk">Moscow </SelectItem>
-          <SelectItem value="ist">India </SelectItem>
-          <SelectItem value="cst_china">China </SelectItem>
-          <SelectItem value="jst">Japan </SelectItem>
-          <SelectItem value="kst">Korea </SelectItem>
-          <SelectItem value="ist_indonesia">
-            Indonesia Central 
-          </SelectItem>
-        </SelectGroup>
-        <SelectGroup>
-          <SelectLabel>Australia & Pacific</SelectLabel>
-          <SelectItem value="awst">
-            Australian Western
-          </SelectItem>
-          <SelectItem value="acst">
-            Australian Central
-          </SelectItem>
-          <SelectItem value="aest">
-            Australian Eastern 
-          </SelectItem>
-          <SelectItem value="nzst">New Zealand </SelectItem>
-          <SelectItem value="fjt">Fiji Time </SelectItem>
-        </SelectGroup>
-        <SelectGroup>
-          <SelectLabel>South America</SelectLabel>
-          <SelectItem value="art">Argentina Time </SelectItem>
-          <SelectItem value="bot">Bolivia Time </SelectItem>
-          <SelectItem value="brt">Brasilia Time </SelectItem>
-          <SelectItem value="clt">Chile </SelectItem>
+      <SelectContent >
+       <SelectGroup>
+          <SelectLabel>Cities</SelectLabel>
+          <SelectItem value="Peshawar">Peshawar </SelectItem>
+          <SelectItem value="Lahore">Lahore </SelectItem>
+          <SelectItem value="Karachi">Karachi </SelectItem>
+          <SelectItem value="Islamabad">Islamabad </SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
-    <Select>
+    <Select onValueChange={handleRatingChange}>
   <SelectTrigger className="w-[340px] border-2 border-gray-300">
     <div className='flex items-center space-x-1'>
         <div><RiStarSLine/></div>
@@ -104,12 +90,11 @@ const HotelSearch = () => {
     </div>
   </SelectTrigger>
   <SelectContent>
-    <SelectItem value="5star">5 Star</SelectItem>
-    <SelectItem value="4Star">4 Star</SelectItem>
-    <SelectItem value="3Star">3 Star</SelectItem>
+    <SelectItem value="5">5 Star</SelectItem>
+    <SelectItem value="4">4 Star</SelectItem>
   </SelectContent>
 </Select>
-<Select>
+<Select onValueChange={handleRoomSpaceChange}>
   <SelectTrigger className="w-[340px] border-2  border-gray-300 ">
     <div className='flex items-center space-x-1'>
         <div><IoMdPeople/></div>
@@ -122,9 +107,10 @@ const HotelSearch = () => {
     <SelectItem value="6">6 Person Room</SelectItem>
     <SelectItem value="4">4 Person Room </SelectItem>
     <SelectItem value="2">2 Person Room </SelectItem>
+    <SelectItem value="1">1 Person Room </SelectItem>
   </SelectContent>
 </Select>
-<button className='bg-sky-700 rounded-e-md text-white p-[11px] w-[200px] border-2 border-sky-800  px-8 font-medium'>Search</button>
+<Link to="/hotel"><button onClick={ onsubmit}className='bg-sky-700 rounded-e-md text-white p-[11px] w-[200px] border-2 border-sky-800  px-8 font-medium'>Search</button></Link>
       </div>
       </div>
       </div>
