@@ -43,7 +43,7 @@ const Signup = () => {
     }
     const res = await axios.post("https://tour-arc.vercel.app/signup", values);
     if (res.status === 200) {
-      Navigate("/");
+      navigate("/");
     }
   };
 
