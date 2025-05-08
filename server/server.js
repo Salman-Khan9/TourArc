@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://tour-arc-d51d.vercel.app/",
+    origin: "https://tour-arc-d51d.vercel.app",
     credentials: true,
   })
 );
