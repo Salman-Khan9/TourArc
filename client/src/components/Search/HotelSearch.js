@@ -15,7 +15,6 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { set_Search } from "../../Redux/Slices/SearchSlice";
 import { selecthotels } from "../../Redux/Slices/HotelSlice";
-import { Link } from "react-router-dom";
 
 const HotelSearch = () => {
   const dispatch = useDispatch();

@@ -40,7 +40,7 @@ const Signup = () => {
     if (values.password !== values.confirmpassword) {
       window.alert("Password doesnot match");
     }
-    await axios.post("http://localhost:5000/signup", values);
+    await axios.post("https://tour-arc.vercel.app/signup", values);
   };
 
   return (

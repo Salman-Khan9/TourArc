@@ -28,7 +28,7 @@ const Login = () => {
     },
   });
   const onSubmit = async (values) => {
-    const res = await axios.post("http://localhost:5000/login", values);
+    const res = await axios.post("https://tour-arc.vercel.app/login", values);
   };
 
   return (

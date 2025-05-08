@@ -33,7 +33,7 @@ const Hotel = () => {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const data = await axios.get("http://localhost:5000/hotels");
+        const data = await axios.get("https://tour-arc.vercel.app/hotels");
         dispatch(Set_hotels(data.data));
       } catch (error) {
         console.log(error);
