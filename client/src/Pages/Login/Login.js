@@ -14,7 +14,7 @@ import {
   FormMessage,
 } from "../../components/ui/form";
 import { Input } from "../../components/ui/input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const formSchema = z.object({
   email: z.string().min(1, "Email required ").email(),
   password: z.string(),
@@ -27,8 +27,13 @@ const Login = () => {
       password: "",
     },
   });
+  const navigate = useNavigate();
+
   const onSubmit = async (values) => {
     const res = await axios.post("https://tour-arc.vercel.app/login", values);
+    if (res.status === 200) {
+      navigate("/");
+    }
   };
 
   return (

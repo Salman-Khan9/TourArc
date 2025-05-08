@@ -13,7 +13,7 @@ import {
   FormMessage,
 } from "../../components/ui/form";
 import { Input } from "../../components/ui/input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
   firstname: z.string().min(1, "First name is required"),
@@ -36,11 +36,15 @@ const Signup = () => {
       confirmpassword: "",
     },
   });
+  const navigate = useNavigate();
   const onSubmit = async (values) => {
     if (values.password !== values.confirmpassword) {
       window.alert("Password doesnot match");
     }
-    await axios.post("https://tour-arc.vercel.app/signup", values);
+    const res = await axios.post("https://tour-arc.vercel.app/signup", values);
+    if (res.status === 200) {
+      Navigate("/");
+    }
   };
 
   return (
