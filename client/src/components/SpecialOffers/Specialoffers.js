@@ -8,7 +8,9 @@ const Specialoffers = () => {
   useEffect(() => {
     const uri = async () => {
       try {
-        const imguri = await axios.get("https://tour-arc.vercel.app/getoffer");
+        const imguri = await axios.get(
+          "https://tour-arc-backend-production.up.railway.app/getoffer"
+        );
         setimagesuri(imguri.data);
       } catch (error) {
         console.log(error);

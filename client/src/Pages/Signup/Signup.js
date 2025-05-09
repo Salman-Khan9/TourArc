@@ -41,7 +41,10 @@ const Signup = () => {
     if (values.password !== values.confirmpassword) {
       window.alert("Password doesnot match");
     }
-    const res = await axios.post("https://tour-arc.vercel.app/signup", values);
+    const res = await axios.post(
+      "https://tour-arc-backend-production.up.railway.app/signup",
+      values
+    );
     if (res.status === 200) {
       navigate("/");
     }

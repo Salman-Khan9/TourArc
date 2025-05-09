@@ -6,7 +6,9 @@ const HighestReviewed = () => {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const data = await axios.get("https://tour-arc.vercel.app/PastOffers");
+        const data = await axios.get(
+          "https://tour-arc-backend-production.up.railway.app/PastOffers"
+        );
         setdata(data.data);
       } catch (error) {
         console.log(error);

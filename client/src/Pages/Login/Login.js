@@ -30,7 +30,10 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (values) => {
-    const res = await axios.post("https://tour-arc.vercel.app/login", values);
+    const res = await axios.post(
+      "https://tour-arc-backend-production.up.railway.app/login",
+      values
+    );
     if (res.status === 200) {
       navigate("/");
     }

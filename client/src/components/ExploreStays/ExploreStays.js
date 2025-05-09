@@ -23,7 +23,7 @@ const ExploreStays = () => {
     const fetchdata = async () => {
       try {
         const data = await axios.get(
-          "https://tour-arc.vercel.app/TDestinations"
+          "https://tour-arc-backend-production.up.railway.app/TDestinations"
         );
         setdata(data.data);
       } catch (error) {
