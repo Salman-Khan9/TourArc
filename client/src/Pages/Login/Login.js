@@ -37,7 +37,7 @@ const Login = () => {
       values
     );
     const data = res.data;
-    const token = data.id;
+    const token = data._id;
     console.log(token);
     dispatch(Set_token(token));
 

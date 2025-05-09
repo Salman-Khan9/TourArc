@@ -14,6 +14,8 @@ import {
 } from "../../components/ui/form";
 import { Input } from "../../components/ui/input";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Set_token } from "../../Redux/Slices/userSlice";
 
 const formSchema = z.object({
   firstname: z.string().min(1, "First name is required"),
@@ -36,6 +38,7 @@ const Signup = () => {
       confirmpassword: "",
     },
   });
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const onSubmit = async (values) => {
     if (values.password !== values.confirmpassword) {
@@ -45,6 +48,10 @@ const Signup = () => {
       "https://tour-arc-backend-production.up.railway.app/signup",
       values
     );
+    const data = res.data;
+    const token = data._id;
+    console.log(token);
+    dispatch(Set_token(token));
     if (res.status === 200) {
       navigate("/");
     }
