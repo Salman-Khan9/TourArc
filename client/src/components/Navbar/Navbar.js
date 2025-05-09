@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <div className="w-screen h-[180px] bg-gray-50">
-      <div className="w-full h-[80px] items-center flex justify-between  mix-blend-multiply md:justify-evenly  ">
+      <div className="w-full h-[80px] items-center flex justify-between container mx-auto mix-blend-multiply md:justify-evenly  ">
         <div className="flex items-center  gap-1 w-full">
           <a href="/">
             <img
