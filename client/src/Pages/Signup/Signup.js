@@ -43,6 +43,7 @@ const Signup = () => {
   const onSubmit = async (values) => {
     if (values.password !== values.confirmpassword) {
       window.alert("Password doesnot match");
+      return;
     }
     const res = await axios.post(
       "https://tour-arc-backend-production.up.railway.app/signup",
