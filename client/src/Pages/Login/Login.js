@@ -36,8 +36,9 @@ const Login = () => {
       "https://tour-arc-backend-production.up.railway.app/login",
       values
     );
+    dispatch(Set_token(res.data.id));
+
     if (res.status === 200) {
-      dispatch(Set_token(res.data.id));
       navigate("/");
     }
   };
