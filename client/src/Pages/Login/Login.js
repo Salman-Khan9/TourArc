@@ -15,6 +15,7 @@ import {
 } from "../../components/ui/form";
 import { Input } from "../../components/ui/input";
 import { Link, useNavigate } from "react-router-dom";
+import { Set_token } from "@/src/Redux/Slices/userSlice";
 const formSchema = z.object({
   email: z.string().min(1, "Email required ").email(),
   password: z.string(),
@@ -35,6 +36,7 @@ const Login = () => {
       values
     );
     if (res.status === 200) {
+      dispatch(Set_token(res.data.id));
       navigate("/");
     }
   };

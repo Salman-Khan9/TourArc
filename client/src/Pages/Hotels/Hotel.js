@@ -28,7 +28,6 @@ const Hotel = () => {
   const endpagination = hotels.length;
   const [startindex, setstartindex] = useState(0);
   const [endindex, setendindex] = useState(cardsperpage);
-  console.log(endindex);
   const dispatch = useDispatch();
   useEffect(() => {
     const fetchdata = async () => {

@@ -9,8 +9,11 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "../../components/ui/popover";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const token = useSelector(selectToken);
+
   return (
     <div className="w-screen h-[180px] bg-gray-50">
       <div className="w-full h-[80px] items-center flex justify-between  mix-blend-multiply md:justify-evenly  ">
@@ -50,20 +53,22 @@ const Navbar = () => {
             <Input type="search" placeholder="Search"></Input>
           </div>
         </div>
-        <div className="ms-[30px] space-x-2">
-          <Link
-            to="/login"
-            className=" lg:px-[45px] lg:py-2 px-5 py-1 border-2 rounded border-sky-500 hover:shadow-xl font-medium hover:font-bold text-sky-700"
-          >
-            Login
-          </Link>
-          <Link
-            to="/signup"
-            className="lg:py-2 lg:px-[45px] px-5 py-1 border-2 rounded border-sky-500 hover:shadow-xl font-medium hover:font-bold  text-sky-700 "
-          >
-            Register
-          </Link>
-        </div>
+        {!token && (
+          <div className="ms-[30px] space-x-2">
+            <Link
+              to="/login"
+              className=" lg:px-[45px] lg:py-2 px-5 py-1 border-2 rounded border-sky-500 hover:shadow-xl font-medium hover:font-bold text-sky-700"
+            >
+              Login
+            </Link>
+            <Link
+              to="/signup"
+              className="lg:py-2 lg:px-[45px] px-5 py-1 border-2 rounded border-sky-500 hover:shadow-xl font-medium hover:font-bold  text-sky-700 "
+            >
+              Register
+            </Link>
+          </div>
+        )}
       </div>
 
       <div className="flex justify-center space-x-3 mt-5">
