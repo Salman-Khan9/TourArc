@@ -52,9 +52,9 @@ const Signup = () => {
     const token = data._id;
     console.log(token);
     dispatch(Set_token(token));
-    if (res.status === 200) {
-      console.log("navigating-----");
-      navigate("/");
+    if (res.data) {
+      console.log("navigating-----", res.status);
+      return navigate("/");
     }
   };
 
