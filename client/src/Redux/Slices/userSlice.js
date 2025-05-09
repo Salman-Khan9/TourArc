@@ -8,7 +8,7 @@ const Tokenslice = createSlice({
   name: "token",
   initialState,
   reducers: {
-    Set_hotels(state, action) {
+    Set_token(state, action) {
       state.token = action.payload;
     },
   },
