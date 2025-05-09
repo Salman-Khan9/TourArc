@@ -27,29 +27,6 @@ const Navbar = () => {
             />
           </a>
 
-          <Link className="m-4 hidden lg:flex">
-            <RxQuestionMarkCircled
-              title="About-us"
-              size={34}
-              color="#4c94c2"
-            ></RxQuestionMarkCircled>
-          </Link>
-          <div className="lg:flex hidden">
-            <Popover>
-              <PopoverTrigger>
-                <img
-                  title="Language"
-                  className="w-[30px] h-[30px]"
-                  src={languageflag}
-                  alt="English"
-                ></img>
-              </PopoverTrigger>
-              <PopoverContent>
-                <p>Language:English</p>
-              </PopoverContent>
-            </Popover>
-          </div>
-
           <div className="w-full ms-5 lg:flex hidden">
             <Input type="search" placeholder="Search"></Input>
           </div>
@@ -69,6 +46,32 @@ const Navbar = () => {
               Register
             </Link>
           </div>
+        )}
+        {token && (
+          <>
+            <Link className="m-4 hidden lg:flex">
+              <RxQuestionMarkCircled
+                title="About-us"
+                size={34}
+                color="#4c94c2"
+              ></RxQuestionMarkCircled>
+            </Link>
+            <div className="lg:flex hidden">
+              <Popover>
+                <PopoverTrigger>
+                  <img
+                    title="Language"
+                    className="w-[30px] h-[30px]"
+                    src={languageflag}
+                    alt="English"
+                  ></img>
+                </PopoverTrigger>
+                <PopoverContent>
+                  <p>Language:English</p>
+                </PopoverContent>
+              </Popover>
+            </div>
+          </>
         )}
       </div>
 
