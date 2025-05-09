@@ -15,7 +15,8 @@ import {
 } from "../../components/ui/form";
 import { Input } from "../../components/ui/input";
 import { Link, useNavigate } from "react-router-dom";
-import { Set_token } from "@/src/Redux/Slices/userSlice";
+import { Set_token } from "../../Redux/Slices/userSlice";
+import { useDispatch } from "react-redux";
 const formSchema = z.object({
   email: z.string().min(1, "Email required ").email(),
   password: z.string(),
@@ -29,7 +30,7 @@ const Login = () => {
     },
   });
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const onSubmit = async (values) => {
     const res = await axios.post(
       "https://tour-arc-backend-production.up.railway.app/login",

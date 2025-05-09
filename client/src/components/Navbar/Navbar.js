@@ -10,6 +10,7 @@ import {
   PopoverTrigger,
 } from "../../components/ui/popover";
 import { useSelector } from "react-redux";
+import { selectToken } from "../../Redux/Slices/userSlice";
 
 const Navbar = () => {
   const token = useSelector(selectToken);
