@@ -36,8 +36,10 @@ const Login = () => {
       "https://tour-arc-backend-production.up.railway.app/login",
       values
     );
-    console.log(res.data);
-    dispatch(Set_token(res.data.id));
+    const data = res.data;
+    const token = data.id;
+    console.log(token);
+    dispatch(Set_token(token));
 
     if (res.status === 200) {
       navigate("/");
